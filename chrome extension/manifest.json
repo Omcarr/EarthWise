@@ -1,0 +1,33 @@
+{   "manifest_version": 3,
+    "name": "EarthWise",
+    "version": "1.0",
+    "permissions": [
+        "tabs",
+        "activeTab",
+        "scripting",
+        "storage"
+    ],
+    "background": {
+        "service_worker": "background.js"
+    },
+    "host_permissions": [
+        "http://www.amazon.in/*",
+        "https://www.amazon.in/*",
+        "http://www.swiggy.com/*",
+        "https://www.swiggy.com/*"
+    ],
+    "action": {
+    "default_popup": "popup.html",
+    "default_icon": {
+      "128": "logo.png"
+    }},
+    "content_scripts": [
+        {
+            "matches": [
+                "*://www.amazon.in/*",
+                "*://www.swiggy.com/instamart/item/*"
+            ],
+            "js": ["content.js"]
+        }
+    ]
+}

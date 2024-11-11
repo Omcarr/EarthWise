@@ -1,0 +1,10 @@
+.env
+venv/
+chrome extension/insert.js
+chrome extension/logo.png
+Technovate/extension/__pycache__
+Technovate/Technovate/__pycache__
+Technovate/eco_products
+Technovate/media
+Technovate/db.sqlite3
+Technovate/extension/migrations
