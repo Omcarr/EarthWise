@@ -1,7 +1,10 @@
-
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 
+require('dotenv').config();
+
+const GmapsApiKey = process.env.GMAPS_API_KEY;
+console.log(GmapsApiKey)
 const App = () => {
   const [mapLoaded, setMapLoaded] = useState(false);
   const [nearestStations, setNearestStations] = useState(null);
@@ -32,7 +35,7 @@ const App = () => {
 
   useEffect(() => {
     const script = document.createElement('script');
-    script.src = `https://maps.googleapis.com/maps/api/js?key=AIzaSyDaQZ6F6QVVie1p8WCEFy-8xs018IaMe9s`;
+    script.src = `https://maps.googleapis.com/maps/api/js?key=${GmapsApiKey}`;
     script.async = true;
     script.onload = () => {
       setMapLoaded(true);
