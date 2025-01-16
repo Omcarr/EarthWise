@@ -6,7 +6,7 @@ import matplotlib.pyplot as plt
 import genai  
 import json
 import requests
-
+import os
 # Your Gemini API key (replace with your actual key)
 GEMINI_API_KEY = "your key"
 
@@ -97,7 +97,7 @@ def parse_product_information(text):
 # Function to make a request to Gemini API
 def get_response_from_gemini(prompt):
     url = 'https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash-latest:generateContent'
-    api_key = 'AIzaSyBi734jxAN158vb3mRlGycfCf1l2mQTMbw'  # Replace with your actual API key
+    api_key = os.environ["GMAPS_API_KEY"]  # Replace with your actual API key
     
     # Define headers
     headers = {
